@@ -13,4 +13,13 @@ create table appointments(appointmentID int primary key, patientID int , doctorI
 
 
 
+create table inventory(itemID int primary key, itemName varchar(25) , quantity int,price float, expiryDate date);
 
+
+
+create table medicalrecords(recordId int primary key, patientId int , doctorID int, diagnosis varchar(25), treatment varchar(30), prescription varchar(25), recordDate date,  foreign key (patientID) REFERENCES patients(patientId), foreign key (doctorID) REFERENCES doctors(doctorID));
+
+
+
+
+  create table departments(departmentID int primary key , departmentName varchar(25), departmentHead varchar(30));
